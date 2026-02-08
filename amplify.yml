@@ -1,55 +1,16 @@
-name: Deploy to Amplify
-
-on:
-  push:
-    branches: [ "main" ]
-    # Optional: only deploy when website files change
-    # paths:
-    #   - "src/**"
-    #   - "public/**"
-    #   - "package.json"
-    #   - "package-lock.json"
-    #   - "amplify.yml"
-
-  workflow_dispatch: {}
-
-concurrency:
-  group: amplify-deploy-${{ github.ref }}
-  cancel-in-progress: true
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-
-      - name: Install
-        run: npm install
-
-      - name: Test
-        run: npm test --if-present
-
-      - name: Build
-        run: npm run build --if-present
-
-      - name: Trigger Amplify build webhook
-        env:
-          AMPLIFY_WEBHOOK_URL: ${{ secrets.AMPLIFY_WEBHOOK_URL }}
-        run: |
-          if [ -z "$AMPLIFY_WEBHOOK_URL" ]; then
-            echo "Missing secret: AMPLIFY_WEBHOOK_URL"
-            exit 1
-          fi
-
-          echo "Triggering Amplify webhook..."
-          curl -sS -X POST "$AMPLIFY_WEBHOOK_URL" -H "Content-Type: application/json" -d '{}' | cat
-          echo
-          echo "Done."
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci || npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
