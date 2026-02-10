@@ -6,96 +6,119 @@ export function ContributorProfile() {
 
   return (
     <div className="min-h-screen bg-neutral-50 pb-20">
-      <Header showBack onBack={() => navigate(-1)} />
+      <Header showBack onBack={() => navigate(-1)} title="Behind the Camera" />
 
       <main className="px-6 py-6 max-w-md mx-auto">
         {/* Profile Header */}
         <section className="mb-8">
           <div className="w-24 h-24 bg-neutral-300 mb-4" />
-          <h1 className="text-xl mb-2">Ayesha Malik</h1>
-          <p className="text-sm text-neutral-600">Verified Contributor since 2024</p>
-        </section>
-
-        {/* Bio */}
-        <section className="mb-8">
-          <h2 className="text-sm uppercase tracking-wider text-neutral-500 mb-3">
-            Bio
-          </h2>
-          <p className="text-neutral-700 leading-relaxed">
-            Documentary photographer and cultural researcher focusing on northern regions. Background in anthropology and community-based documentation practices. Works primarily in mountain communities documenting traditional knowledge systems.
+          <h1 className="text-xl mb-3 text-neutral-900">Ayesha Malik</h1>
+          <p className="text-sm text-neutral-700 leading-relaxed">
+            Exploring shops, markets, and local spots across Pakistan. Based in Lahore, documenting 
+            what I find worth sharing.
           </p>
         </section>
 
-        {/* Verification Badge */}
-        <section className="mb-8 p-4 bg-white border border-neutral-200">
-          <div className="flex items-start gap-3">
-            <div className="w-6 h-6 bg-neutral-300 mt-1" />
-            <div className="flex-1 text-sm text-neutral-700">
-              <p className="text-neutral-900 mb-2">Verified Contributor</p>
-              <p className="mb-2">
-                This contributor meets our editorial and ethical standards for cultural documentation.
-              </p>
-              <ul className="space-y-1 text-xs text-neutral-600">
-                <li>✓ Identity verified</li>
-                <li>✓ Documentation methods reviewed</li>
-                <li>✓ Community permissions confirmed</li>
-                <li>✓ Editorial review completed</li>
-              </ul>
-            </div>
+        {/* Activity Summary */}
+        <section className="mb-8 flex gap-6">
+          <div>
+            <p className="text-2xl text-neutral-900 mb-1">23</p>
+            <p className="text-xs text-neutral-600">Visits</p>
+          </div>
+          <div>
+            <p className="text-2xl text-neutral-900 mb-1">8</p>
+            <p className="text-xs text-neutral-600">Cities</p>
           </div>
         </section>
 
-        {/* Focus Areas */}
+        {/* Cities Visited */}
         <section className="mb-8">
           <h2 className="text-sm uppercase tracking-wider text-neutral-500 mb-3">
-            Focus Areas
+            Cities Visited
           </h2>
           <div className="flex flex-wrap gap-2">
-            <span className="px-3 py-1 text-xs bg-white border border-neutral-300">
-              Mountain Communities
+            <span className="px-3 py-1.5 text-xs bg-white border border-neutral-300">
+              Lahore
             </span>
-            <span className="px-3 py-1 text-xs bg-white border border-neutral-300">
-              Traditional Crafts
+            <span className="px-3 py-1.5 text-xs bg-white border border-neutral-300">
+              Karachi
             </span>
-            <span className="px-3 py-1 text-xs bg-white border border-neutral-300">
-              Agricultural Practices
+            <span className="px-3 py-1.5 text-xs bg-white border border-neutral-300">
+              Islamabad
             </span>
-            <span className="px-3 py-1 text-xs bg-white border border-neutral-300">
-              Gilgit-Baltistan
+            <span className="px-3 py-1.5 text-xs bg-white border border-neutral-300">
+              Gilgit
+            </span>
+            <span className="px-3 py-1.5 text-xs bg-white border border-neutral-300">
+              Multan
+            </span>
+            <span className="px-3 py-1.5 text-xs bg-white border border-neutral-300">
+              Peshawar
+            </span>
+            <span className="px-3 py-1.5 text-xs bg-white border border-neutral-300">
+              Skardu
+            </span>
+            <span className="px-3 py-1.5 text-xs bg-white border border-neutral-300">
+              Faisalabad
             </span>
           </div>
         </section>
 
-        {/* Published Journeys */}
+        {/* Recent Visits */}
         <section className="mb-8">
           <h2 className="text-sm uppercase tracking-wider text-neutral-500 mb-4">
-            Published Journeys
+            Recent Visits
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3">
             <Link to="/journeys/1">
               <article className="bg-white border border-neutral-200 p-4 hover:border-neutral-400 transition-colors">
-                <div className="w-full h-32 bg-neutral-200 mb-3" />
-                <h4 className="text-neutral-900 mb-2">
-                  Through the Valleys of Hunza
-                </h4>
-                <p className="text-xs text-neutral-600 mb-2">
-                  Gilgit-Baltistan • January 28, 2026
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h4 className="text-sm text-neutral-900">
+                    Karim's Carpet Workshop
+                  </h4>
+                  <span className="text-xs text-neutral-500 whitespace-nowrap">Jan 28, 2026</span>
+                </div>
+                <p className="text-xs text-neutral-600">
+                  Shop Visit • Lahore
                 </p>
-                <p className="text-sm text-neutral-700 leading-relaxed">
-                  A documentation of village traditions and landscape formations in northern territories.
+              </article>
+            </Link>
+
+            <Link to="/journeys/3">
+              <article className="bg-white border border-neutral-200 p-4 hover:border-neutral-400 transition-colors">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h4 className="text-sm text-neutral-900">
+                    Sunday Food Market at Anarkali
+                  </h4>
+                  <span className="text-xs text-neutral-500 whitespace-nowrap">Jan 22, 2026</span>
+                </div>
+                <p className="text-xs text-neutral-600">
+                  Market Walkthrough • Lahore
+                </p>
+              </article>
+            </Link>
+
+            <Link to="/journeys/7">
+              <article className="bg-white border border-neutral-200 p-4 hover:border-neutral-400 transition-colors">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h4 className="text-sm text-neutral-900">
+                    Fortress Stadium Food Street
+                  </h4>
+                  <span className="text-xs text-neutral-500 whitespace-nowrap">Jan 15, 2026</span>
+                </div>
+                <p className="text-xs text-neutral-600">
+                  Food Stop • Lahore
                 </p>
               </article>
             </Link>
           </div>
         </section>
 
-        {/* Standards Note */}
-        <section className="text-xs text-neutral-600 leading-relaxed p-4 bg-neutral-100">
+        {/* Note */}
+        <section className="text-xs text-neutral-600 leading-relaxed p-4 bg-white border border-neutral-200">
           <p>
-            All contributors undergo a verification process before publishing.
-            <Link to="/standards" className="underline ml-1 text-neutral-900">
-              Learn about our standards
-            </Link>
+            All visits are documented firsthand. We don't accept payment from businesses or 
+            locations featured in our content.
           </p>
         </section>
       </main>

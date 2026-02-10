@@ -8,12 +8,13 @@ export function Home() {
 
       <main className="px-6 py-8 max-w-md mx-auto">
         {/* Hero Section */}
-        <section className="mb-10">
+        <section className="mb-8">
           <h2 className="text-2xl mb-4 leading-tight text-neutral-900">
-            Discover Pakistan through its people and trusted journeys
+            Explore Pakistan through shopping, food, travel, and hidden gems.
           </h2>
           <p className="text-base text-neutral-600 leading-relaxed">
-            Verified cultural stories and local knowledge from contributors across Pakistan.
+            We visit shops, markets, and locations firsthand so you can make better choices before 
+            you spend your time or money.
           </p>
         </section>
 
@@ -23,20 +24,20 @@ export function Home() {
             to="/journeys"
             className="block w-full py-4 px-6 bg-neutral-900 text-white text-center hover:bg-neutral-800 transition-colors"
           >
-            Explore Journeys
+            Watch Latest Visits
           </Link>
           <Link
-            to="/standards"
+            to="/journeys"
             className="block w-full py-4 px-6 border border-neutral-300 text-neutral-900 text-center hover:bg-neutral-100 transition-colors"
           >
-            How We Build Trust
+            Explore by City
           </Link>
         </section>
 
         {/* Recent Journeys Preview */}
         <section className="mb-12">
           <h3 className="text-xs uppercase tracking-wider text-neutral-500 mb-5">
-            Recent Journeys
+            Recent Visits
           </h3>
 
           <div className="space-y-5">

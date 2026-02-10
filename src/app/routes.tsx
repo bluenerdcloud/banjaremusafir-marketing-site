@@ -7,6 +7,7 @@ import { PersonProfile } from "./screens/PersonProfile";
 import { ContributorProfile } from "./screens/ContributorProfile";
 import { Standards } from "./screens/Standards";
 import { ApplyToContribute } from "./screens/ApplyToContribute";
+import { About } from "./screens/About";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
       { path: "contributors", Component: ContributorProfile },
       { path: "standards", Component: Standards },
       { path: "contribute", Component: ApplyToContribute },
-      { path: "about", Component: Standards },
+      { path: "about", Component: About },
     ],
   },
 ]);
